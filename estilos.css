@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  color: #192e28;
+  background: #eff4f0;
+  --accent: #17533e;
+  --border: #cfddd5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { width: min(72rem, calc(100% - 2rem)); margin-inline: auto; }
+.masthead { background: #133c30; color: white; padding-block: 2.2rem; border-bottom: 5px solid #b9dc8a; }
+.masthead p { margin: .35rem 0 0; color: #e2f0e8; }
+.series { font-size: .8rem; font-weight: 750; letter-spacing: .14em; }
+h1 { margin: .35rem 0; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; }
+h2 { margin: 0 0 1rem; font-size: 1.4rem; }
+h3 { font-size: 1rem; margin: 0 0 .5rem; }
+.layout { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: 1.25rem; margin-block: 1.5rem 3rem; align-items: start; }
+.panel { background: #fff; border: 1px solid var(--border); border-radius: 1rem; padding: 1.15rem; }
+.work { padding: clamp(1rem, 4vw, 2rem); }
+label, summary { font-weight: 650; }
+.filters { display: grid; gap: .85rem; margin-bottom: 1rem; }
+select, button { font: inherit; min-height: 2.65rem; border: 1px solid #a5b9ad; border-radius: .55rem; color: inherit; background: white; }
+select { width: 100%; padding: .4rem; margin-top: .3rem; }
+button { cursor: pointer; padding: .45rem .8rem; }
+button:hover:not(:disabled) { background: #edf5ee; }
+button:disabled { opacity: .5; cursor: default; }
+.primary { color: white; background: var(--accent); border-color: var(--accent); }
+.primary:hover:not(:disabled) { background: #103e30; }
+:focus-visible { outline: 3px solid #367aba; outline-offset: 3px; }
+progress { width: 100%; accent-color: var(--accent); display: block; margin: .45rem 0 1rem; }
+summary { cursor: pointer; }
+#jump { display: grid; grid-template-columns: repeat(auto-fit,minmax(2.2rem,1fr)); gap: .25rem; margin-top: .5rem; }
+#jump button { padding: .2rem; min-height: 2.2rem; }
+#jump [data-answered] { background: #e4f2e5; }
+#jump [aria-current] { border: 2px solid var(--accent); font-weight: 750; }
+#review { width: 100%; margin-top: 1rem; }
+.context { border: 1px solid var(--border); border-radius: .7rem; background: #f4f8f5; padding: 1rem; margin-bottom: 1.1rem; }
+.context img, #prompt img, .option img { max-width: 100% !important; height: auto !important; vertical-align: middle; }
+fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+#options { display: grid; gap: .6rem; }
+.option { display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: center; gap: .6rem; border: 1px solid var(--border); padding: .65rem .8rem; border-radius: .65rem; font-weight: 400; cursor: pointer; }
+.option:has(:checked) { background: #eef7ec; border-color: var(--accent); }
+.option input { accent-color: var(--accent); margin: 0; width: 1.1rem; height: 1.1rem; }
+.option p { margin: .2rem 0; }
+#feedback { color: #3b534a; min-height: 1.4em; }
+.actions { display: flex; justify-content: space-between; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; }
+#reviewList { padding-left: 2rem; }
+#reviewList li { margin-block: .35rem; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 720px) { .layout { grid-template-columns: minmax(0, 1fr); } .filters { grid-template-columns: minmax(0,1fr) minmax(0,1.35fr); } }
+
+.key-notice { color: #3b534a; font-size: .9rem; margin: .6rem 0 1rem; }
+.review-flag { display: inline-block; border-radius: .35rem; padding: .2rem .45rem; color: #663500; background: #fff0cc; font-size: .85rem; font-weight: 700; }
+#reviewFlag { margin: 0 0 .8rem; }
+.review-note { margin: .35rem 0 .8rem; }
+#onlyFlagged { accent-color: var(--accent); }
+
+/* The original formula images have white lettering on transparent backgrounds. */
+:is(#prompt, .option) img:is(
+  [src*="/matematicas/7_P001_"],
+  [src*="/matematicas/9_P016"],
+  [src*="/matematicas/ID770_"],
+  [src*="/matematicas/ID784_"],
+  [src*="/matematicas/math_5_010"],
+  [src$="/matematicas/Imagen12.png"],
+  [src*="/matematicas/MATH_7_013"],
+  [src*="/matematicas/MATH_9_001-"],
+  [src*="/matematicas/MATH_9_017-"],
+  [src$="/9/matematicas/Imagen1.png"],
+  [src$="/9/matematicas/Imagen8.png"],
+  [src$="/9/matematicas/Imagen9.png"],
+  [src$="/9/matematicas/Imagen10.png"],
+  [src$="/9/matematicas/Imagen11.png"]
+) {
+  background: #253a34;
+  border-radius: .2rem;
+}

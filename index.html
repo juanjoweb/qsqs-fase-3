@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QSQS Fase 3 · Práctica interactiva</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="banco.js" defer></script>
+  <script src="claves.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="series">QSQS 2026 / FASE 3</p>
+      <h1>Práctica interactiva</h1>
+      <p>Institución Educativa Villa de San Andrés</p>
+    </div>
+  </header>
+  <main class="wrap layout">
+    <aside class="panel controls" aria-label="Selección y navegación">
+      <div class="filters">
+        <label>Grado<select id="grade"></select></label>
+        <label>Área<select id="area"></select></label>
+      </div>
+      <label for="progress" id="progressText"></label>
+      <progress id="progress"></progress>
+      <p id="keyNotice" class="key-notice">Clave propuesta para práctica</p>
+      <details id="navigator">
+        <summary>Ir a una pregunta</summary>
+        <div id="jump"></div>
+      </details>
+      <button type="button" id="review">Revisar respuestas</button>
+    </aside>
+    <article class="panel work">
+      <div id="questionView">
+        <h2 id="position" tabindex="-1"></h2>
+        <p id="reviewFlag" class="review-flag" hidden>Por revisar</p>
+        <section id="contextBlock" class="context" aria-label="Material de referencia">
+          <h3 id="contextTitle"></h3>
+          <div id="context"></div>
+        </section>
+        <fieldset>
+          <legend class="sr-only">Selecciona una opción</legend>
+          <div id="prompt"></div>
+          <div id="options"></div>
+        </fieldset>
+        <p id="feedback" role="status"></p>
+        <nav class="actions" aria-label="Navegación entre preguntas">
+          <button type="button" id="previous">Anterior</button>
+          <button type="button" id="next" class="primary">Siguiente</button>
+        </nav>
+      </div>
+      <section id="reviewView" hidden>
+        <h2 id="reviewTitle" tabindex="-1">Revisión de respuestas</h2>
+        <p id="reviewStatus"></p>
+        <label id="reviewFilter" hidden><input type="checkbox" id="onlyFlagged"> Mostrar solo las preguntas por revisar</label>
+        <ol id="reviewList"></ol>
+        <div class="actions">
+          <button type="button" id="reset">Borrar respuestas del área</button>
+          <button type="button" id="back" class="primary">Volver a la práctica</button>
+        </div>
+      </section>
+    </article>
+    <noscript>Activa JavaScript para usar la práctica interactiva.</noscript>
+  </main>
+</body>
+</html>
