@@ -52,6 +52,8 @@ fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
 @media (max-width: 720px) { .layout { grid-template-columns: minmax(0, 1fr); } .filters { grid-template-columns: minmax(0,1fr) minmax(0,1.35fr); } }
 
 .key-notice { color: #3b534a; font-size: .9rem; margin: .6rem 0 1rem; }
+.booklet { display: block; margin: 0 0 1rem; padding: .65rem .8rem; border: 1px solid var(--accent); border-radius: .55rem; color: var(--accent); text-align: center; font-weight: 650; text-decoration: none; }
+.booklet:hover { background: #edf5ee; }
 .review-flag { display: inline-block; border-radius: .35rem; padding: .2rem .45rem; color: #663500; background: #fff0cc; font-size: .85rem; font-weight: 700; }
 #reviewFlag { margin: 0 0 .8rem; }
 .review-note { margin: .35rem 0 .8rem; }

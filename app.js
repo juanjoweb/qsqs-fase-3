@@ -163,6 +163,11 @@ function renderReview(section) {
 
 function render() {
   const section = currentArea();
+  const gradeNumber = currentGrade().label.match(/\d+/)[0];
+  const areaName = {1: 'Lenguaje', 2: 'Matematicas', 3: 'Socioemocionales'}[section.id];
+  const booklet = $('booklet');
+  booklet.href = 'cuadernillos/QSQS_Fase_3_Grado_' + gradeNumber + '_' + areaName + '.pdf';
+  booklet.setAttribute('aria-label', 'Descargar cuadernillo PDF de grado ' + gradeNumber + ', ' + section.label);
   $('keyNotice').hidden = section.id === 3;
   $('questionView').hidden = reviewing;
   $('reviewView').hidden = !reviewing;
